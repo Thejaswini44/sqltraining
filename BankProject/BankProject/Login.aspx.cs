@@ -16,15 +16,20 @@ namespace BankProject
 
         }
 
-        
-        protected void btnsubmit_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Admin AdminObj = new Admin();
-            AdminModel AdminModelObj = new AdminModel();
-
-            AdminModelObj.username = txtusername.Text;
-            AdminModelObj.password = txtpassword.Text;
-
+            Customer Customerobj = new Customer();
+            DataTable dtLogin = Customerobj.LoginCheck(txtusername.Text, txtpassword.Text);
+            if (dtLogin.Rows.Count > 0)
+            {
+                Session["email"] = txtusername.Text;
+                Response.Redirect("CustomerDetails.aspx");
+            }
+            else
+            {
+                lblResult.Text = "Email id or password wrong!";
+            }
+           
         }
     }
 }

@@ -114,6 +114,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Customer.aspx" />
+    <Content Include="CustomerDetails.aspx" />
     <Content Include="CustomerLogin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="Customer.aspx.designer.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDetails.aspx.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerDetails.aspx.designer.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerLogin.aspx.cs">
       <DependentUpon>CustomerLogin.aspx</DependentUpon>

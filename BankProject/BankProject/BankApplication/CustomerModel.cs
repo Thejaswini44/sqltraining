@@ -15,7 +15,7 @@ namespace BankProject.BankApplication
         public int card_no { get; set; }
         public int pin_no{ get; set; }
         public string account_type { get; set; }
-        public int account_num { get; set; }
+        public int account_number{ get; set; }
         public string Password { get; set; }
 
 

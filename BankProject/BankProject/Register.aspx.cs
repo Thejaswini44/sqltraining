@@ -29,7 +29,7 @@ namespace BankProject
             CustomerModelObj.card_no  = Convert.ToInt32(txtcard.Text);
             CustomerModelObj.pin_no = Convert.ToInt32(txtpin.Text);
             CustomerModelObj.account_type =txtacc.Text;
-            CustomerModelObj.account_num = Convert.ToInt32(txtaccno.Text);
+            CustomerModelObj.account_number = Convert.ToInt32(txtaccno.Text);
             CustomerModelObj.Password = txtpwd.Text;
 
             string msg = customerObj.InsertCustomer(CustomerModelObj);

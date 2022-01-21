@@ -9,21 +9,28 @@
 <body>
     <form id="form1" runat="server">
     <div align="center">
-    <fieldset style ="width:200px;">
-    <legend>Login page </legend>
-        <asp:TextBox ID="txtusername" placeholder="username" runat="server"
-            Width="180px"></asp:TextBox>
+    <fieldset style ="width:500px;">
+    <legend> Customer Login page </legend>
+        <asp:Label ID="Label1" runat="server" Text="username              "></asp:Label> <asp:TextBox ID="txtusername" placeholder="username" runat="server"
+            Width="280px"></asp:TextBox>
+       
         <br />
         <br />
-        <asp:TextBox ID="txtpassword" placeholder="password" runat="server"
-            Width="180px" TextMode="Password"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server" Text="password               "></asp:Label> <asp:TextBox ID="txtpassword" placeholder="password" runat="server"
+            Width="280px" TextMode="Password"></asp:TextBox>
+       
         <br />
         <br />
-        <asp:Button ID="btnsubmit" runat="server" Text="Submit"
-           Width="81px" onclick="btnsubmit_Click" />
+        <asp:Button ID="btnLogin" runat="server" Text="Login"
+           Width="81px" onclick="btnLogin_Click" />
             <br />
            
     </fieldset>
+        
+        <hr />
+        <asp:Label Text="" ID="lblResult" runat="server" />
+        <hr />
+       
     </div>
 
     </form>

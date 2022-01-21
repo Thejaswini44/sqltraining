@@ -8,9 +8,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+              <div align="center">
+    <fieldset style ="width:200px;">
+    <legend>Customer Login page </legend>
             <asp:Button ID="Login" runat="server" Text="Login" OnClick="Login_Click" />
             <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click" />
+         </fieldset>
         </div>
     </form>
 </body>
