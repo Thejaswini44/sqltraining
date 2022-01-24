@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BankProject.BankApplication;
 using System.Data;
+using BankProjectEntity;
+using BankProjectBusiness;
+using BankProject.BankApplication;
 
 namespace BankProject
 {
@@ -19,7 +21,7 @@ namespace BankProject
         protected void Submit_Click(object sender, EventArgs e)
         {
             Customer customerObj = new Customer();
-            CustomerModel CustomerModelObj = new CustomerModel();
+            BankApplication.CustomerModel CustomerModelObj = new BankApplication.CustomerModel();
 
             CustomerModelObj.name = txtname.Text;
             CustomerModelObj.address = txtaddress.Text;

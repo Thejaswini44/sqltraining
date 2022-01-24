@@ -1,12 +1,13 @@
-﻿using System;
+﻿using BankProjectEntity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace BankProject.BankApplication
+namespace BankProjectData
 {
     public class Admin
     {

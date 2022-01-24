@@ -18,7 +18,7 @@ namespace BankProject
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("AdminLogin.aspx");
         }
     }
 }
