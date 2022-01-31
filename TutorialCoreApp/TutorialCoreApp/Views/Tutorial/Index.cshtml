@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TutorialCoreApp.Models.Tutorial>
+
+<hr />
+<a class="btn btn-primary" asp-action="TutorialEntry">Tutorial Entry</a>
+<hr />
+<table class="table table-bordered table-hover table-light">
+    <thead>
+        <tr>
+            <th>TutorialId</th>
+            <th>TutorialName</th>
+            <th>TutorialDesc</th>
+            <th>Published</th>
+
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TutorialId</td>
+                <td>@item.TutorialName</td>
+                <td>@item.TutorialDesc</td>
+                <td>@item.Published</td>
+
+                <td><a asp-action="EditTutorial" asp-route-TutorialId="@item.TutorialId">Edit</a></td>
+                <td><a asp-action="DeleteTutorial" asp-route-TutorialId="@item.TutorialId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

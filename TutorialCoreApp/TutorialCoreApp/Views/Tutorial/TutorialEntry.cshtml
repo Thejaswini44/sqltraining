@@ -1,0 +1,46 @@
+﻿@model TutorialCoreApp.Models.Tutorial
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<hr />
+<a class="btn btn-primary" asp-action="Index">Show Tutorial Details</a>
+<hr />
+<form method="post">
+    <div>
+        <h1>Tutorial Entry</h1>
+        <hr />
+        <table>
+            <tr>
+                <td>Tutorial Id</td>
+                <td>
+                    @Html.TextBoxFor(obj => obj.TutorialId)
+                    @* <input type="text" id="TutorialId" value="" />*@
+                </td>
+            </tr>
+            <tr>
+                <td>Tutorial Name</td>
+                <td>@Html.TextBoxFor(obj => obj.TutorialName)</td>
+            </tr>
+            <tr>
+                <td>Tutorial Desc</td>
+                <td>@Html.TextBoxFor(obj => obj.TutorialDesc)</td>
+            </tr>
+            <tr>
+                <td> Published</td>
+                <td>@Html.TextBoxFor(obj => obj.Published)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> <input type="submit" values="Save" /></td>
+            </tr>
+
+        </table>
+        <hr />
+        <div>
+            @ViewBag.message
+        </div>
+
+    </div>
+</form>
