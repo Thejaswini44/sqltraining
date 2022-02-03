@@ -6,12 +6,12 @@ using System.Text;
 
 namespace AtmBanking.Entity.Models
 {
-   public class Admin
+  public  class Admin
     {
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Username { get; set; }
         public string Password { get; set; }
-
     }
 }

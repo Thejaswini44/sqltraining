@@ -12,7 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AtmBanking.DAL.Data;
 
-namespace AtmBanking
+namespace AtmBankingApi
 {
     public class Startup
     {
@@ -27,7 +27,7 @@ namespace AtmBanking
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionStr = Configuration.GetConnectionString("SqlConnection");
-            services.AddDbContext<AtmDbContext>(options => options.UseSqlServer("connectionStr"));
+            services.AddDbContext<AtmDbContext>(options => options.UseSqlServer(connectionStr));
             services.AddControllers();
         }
 

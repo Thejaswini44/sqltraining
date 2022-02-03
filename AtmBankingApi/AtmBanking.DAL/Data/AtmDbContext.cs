@@ -6,12 +6,12 @@ using System.Text;
 
 namespace AtmBanking.DAL.Data
 {
-     public class AtmDbContext:DbContext
+    public class AtmDbContext : DbContext
     {
         public AtmDbContext(DbContextOptions<AtmDbContext> options) : base(options)
         {
 
         }
-        public DbSet<Admin> admin { get;set; }
+        public DbSet<Admin> admin { get; set; }
     }
 }

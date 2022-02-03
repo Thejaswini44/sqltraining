@@ -1,6 +1,6 @@
 using System;
 
-namespace AtmBanking
+namespace AtmBankingApi
 {
     public class WeatherForecast
     {

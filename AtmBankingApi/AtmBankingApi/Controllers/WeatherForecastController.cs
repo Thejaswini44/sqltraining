@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AtmBanking.Controllers
+namespace AtmBankingApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
