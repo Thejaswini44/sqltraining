@@ -7,6 +7,7 @@ namespace AtmBanking.Entity.Models
 {
     public class Customer
     {
+
         public string name { get; set; }
         public string address { get; set; }
         public string city { get; set; }
@@ -18,7 +19,6 @@ namespace AtmBanking.Entity.Models
         public string account_type { get; set; }
         public int account_number { get; set; }
         public string Password { get; set; }
-
 
     }
 }

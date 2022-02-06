@@ -1,8 +1,8 @@
-﻿using AtmBanking.Entity.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using AtmBanking.Entity.Models;
 
 namespace AtmBanking.DAL.Data
 {
@@ -12,7 +12,7 @@ namespace AtmBanking.DAL.Data
         {
 
         }
-        public DbSet<Admin> admin { get; set; }
+       // public DbSet<Admin> admin { get; set; }
         public DbSet<Customer> customer { get; set; }
 
     }
