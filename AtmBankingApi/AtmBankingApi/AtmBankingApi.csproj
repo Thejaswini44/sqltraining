@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AtmBanking.BAL\AtmBanking.BAL.csproj" />
     <ProjectReference Include="..\AtmBanking.DAL\AtmBanking.DAL.csproj" />
   </ItemGroup>
 

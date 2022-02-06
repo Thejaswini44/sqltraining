@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmBankingApi", "AtmBankingApi\AtmBankingApi.csproj", "{B600C5E0-8863-454B-AD10-38C0A67F448A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtmBankingApi", "AtmBankingApi\AtmBankingApi.csproj", "{B600C5E0-8863-454B-AD10-38C0A67F448A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmBanking.BAL", "AtmBanking.BAL\AtmBanking.BAL.csproj", "{631A5981-FB09-4017-AAE4-4041F3583B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtmBanking.BAL", "AtmBanking.BAL\AtmBanking.BAL.csproj", "{631A5981-FB09-4017-AAE4-4041F3583B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmBanking.DAL", "AtmBanking.DAL\AtmBanking.DAL.csproj", "{E26B57E6-4D59-4C51-8AF3-A9F90AD87723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtmBanking.DAL", "AtmBanking.DAL\AtmBanking.DAL.csproj", "{E26B57E6-4D59-4C51-8AF3-A9F90AD87723}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmBanking.Entity", "AtmBanking.Entity\AtmBanking.Entity.csproj", "{21783F5B-ABDE-4695-8B4D-A1A078BB0D86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtmBanking.Entity", "AtmBanking.Entity\AtmBanking.Entity.csproj", "{21783F5B-ABDE-4695-8B4D-A1A078BB0D86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmBanking.UI", "AtmBanking.UI\AtmBanking.UI.csproj", "{687572E3-3FC7-40E4-AE22-3648EFA05A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{21783F5B-ABDE-4695-8B4D-A1A078BB0D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21783F5B-ABDE-4695-8B4D-A1A078BB0D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21783F5B-ABDE-4695-8B4D-A1A078BB0D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687572E3-3FC7-40E4-AE22-3648EFA05A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687572E3-3FC7-40E4-AE22-3648EFA05A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687572E3-3FC7-40E4-AE22-3648EFA05A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687572E3-3FC7-40E4-AE22-3648EFA05A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
