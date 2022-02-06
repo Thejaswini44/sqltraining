@@ -1,42 +1,64 @@
 ﻿using AtmBanking.BAL.services;
-using AtmBanking.DAL.Data;
 using AtmBanking.Entity.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
+using System.Threading.Tasks;
 
 namespace AtmBankingApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-  
-    public class UserController : ControllerBase
+    public class CustomersController : ControllerBase
     {
         private CustomerService _customerService;
-        public UserController(CustomerService customerService)
+        public CustomersController(CustomerService customerService)
         {
             _customerService = customerService;
         }
-
-        [HttpPost("Register")]
-        public IActionResult Register([FromBody] Customer customer)
+        [HttpGet("GetCustomers")]
+        public IEnumerable<Customer> GetCustomers()
         {
-            _customerService.Register(customer);
-            return Ok("Register successfully!!");
+            return _customerService.GetCustomers();
         }
-        //[HttpPost("Login")]
-        //public IActionResult Login([FromBody] UserInfo userInfo)
-        //{
-        //    UserInfo user = _userInfoService.Login(userInfo);
-        //    if (user != null)
-        //        return Ok("Login success!!");
-        //    else
-        //        return NotFound();
-        //}
-
+        [HttpPost("AddCustomer")]
+        public IActionResult AddCustomer([FromBody] Customer customer)
+        {
+            _customerService.AddCustomer(customer);
+            return Ok("Customer details registered successfully!!");
+        }
+        [HttpDelete("DeleteCustomer")]
+        public IActionResult DeleteCustomer(int card_no)
+        {
+            _customerService.DeleteCustomer(card_no);
+            return Ok("Customer details deleted successfully!!");
+        }
+        [HttpPut("UpdateCustomer")]
+        public IActionResult UpdateCustomer([FromBody] Customer customer)
+        {
+            _customerService.UpdateCustomer(customer);
+            return Ok("Customer details updated successfully!!");
+        }
     }
 }
+
+//[HttpPost("Register")]
+//public IActionResult Register([FromBody] Customer customer)
+//{
+//    _customerService.Register(customer);
+//    return Ok("Register successfully!!");
+//}
+//[HttpPost("Login")]
+//public IActionResult Login([FromBody] UserInfo userInfo)
+//{
+//    UserInfo user = _userInfoService.Login(userInfo);
+//    if (user != null)
+//        return Ok("Login success!!");
+//    else
+//        return NotFound();
+//}
+
+
+

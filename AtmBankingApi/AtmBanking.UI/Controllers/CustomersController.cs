@@ -18,40 +18,38 @@ namespace AtmBanking.UI.Controllers
         {
             _configuration = configuration;
         }
-        
-            public IActionResult Index()
-            {
-                return View();
-            }
-            public IActionResult  CustomerEntry()
-            {
-                return View();
-            }
 
-            [HttpPost]
-            public async Task<IActionResult> Register(Customer customer)
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult CustomerEntry()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(Customer customer)
+        {
+            ViewBag.status = "";
+            using (HttpClient client = new HttpClient())
             {
-                ViewBag.status = "";
-                using (HttpClient client = new HttpClient())
+                StringContent content = new StringContent(JsonConvert.SerializeObject(customer), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Customers/AddCustomer";
+                using (var response = await client.PostAsync(endPoint, content))
                 {
-                    StringContent content = new StringContent(JsonConvert.SerializeObject(customer), Encoding.UTF8, "application/json");
-                    string endPoint = _configuration["WebApiBaseUrl"] + "Customers/Register";
-                    using (var response = await client.PostAsync(endPoint, content))
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        {
-                            ViewBag.status = "Ok";
-                            ViewBag.message = "Register successfully!";
-                        }
-                        else
-                        {
-                            ViewBag.status = "Error";
-                            ViewBag.message = "Wrong entries!";
-                        }
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Register successfully!";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong entries!";
                     }
                 }
-                return View();
             }
+            return View();
         }
-    
+    }
 }
