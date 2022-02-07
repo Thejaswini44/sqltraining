@@ -12,7 +12,7 @@ namespace AtmBanking.DAL.Repository
         void DeleteCustomer(int card_no);
         Customer GetCustomerBycard_no(int card_no);
         IEnumerable<Customer> GetCustomers();
-        void Register(Customer customer);
+        //void Register(Customer customer);
       
 
     }

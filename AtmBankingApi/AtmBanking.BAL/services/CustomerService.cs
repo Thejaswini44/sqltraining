@@ -39,6 +39,8 @@ namespace AtmBanking.BAL.services
         {
             return _customerRepository.GetCustomers();
         }
+
+      
     }
 }
 

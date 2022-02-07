@@ -1,3 +1,4 @@
+//using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -6,13 +7,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+//using Microsoft.IdentityModel.Tokens;
+using AtmBanking.BAL.services;
+using AtmBanking.DAL.Data;
+using AtmBanking.DAL.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using AtmBanking.DAL.Data;
-using AtmBanking.DAL.Repository;
-using AtmBanking.BAL.services;
 
 namespace AtmBankingApi
 {
@@ -32,7 +35,9 @@ namespace AtmBankingApi
             services.AddDbContext<AtmDbContext>(options => options.UseSqlServer(connectionStr));
             services.AddControllers();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerInfoRepository, CustomerInfoRepository>();
             services.AddTransient<CustomerService, CustomerService>();
+            services.AddTransient<CustomerInfoService, CustomerInfoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

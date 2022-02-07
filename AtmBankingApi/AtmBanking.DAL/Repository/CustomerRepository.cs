@@ -41,11 +41,11 @@ namespace AtmBanking.DAL.Repository
             return _atmDbContext.customer.ToList();
         }
 
-        public void Register(Customer customer)
-        {
-            _atmDbContext.customer.Add(customer);
-            _atmDbContext.SaveChanges();
-        }
+        //public void Register(Customer customer)
+        //{
+        //    _atmDbContext.customer.Add(customer);
+        //    _atmDbContext.SaveChanges();
+        //}
 
         public void UpdateCustomer(Customer customer)
         {
