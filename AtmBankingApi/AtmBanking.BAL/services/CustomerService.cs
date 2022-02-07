@@ -40,16 +40,8 @@ namespace AtmBanking.BAL.services
             return _customerRepository.GetCustomers();
         }
 
-      
+
     }
 }
 
-//public void Register(Customer customer)
-//{
-//    _customerRepository.Register(customer);
-//}
-//public UserInfo Login(Customer userInfo)
-//{
-//    return _userInfoRepository.Login(userInfo);
-//}
 

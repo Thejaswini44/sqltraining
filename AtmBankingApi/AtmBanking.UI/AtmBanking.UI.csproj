@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AtmBanking.DAL\AtmBanking.DAL.csproj" />
     <ProjectReference Include="..\AtmBanking.Entity\AtmBanking.Entity.csproj" />
   </ItemGroup>
 

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AtmBanking.BAL.services
 {
-  public class CustomerInfoService
+    public class CustomerInfoService
     {
         private ICustomerInfoRepository _customerInfoRepository;
         public CustomerInfoService(ICustomerInfoRepository customerInfoRepository)
@@ -18,6 +18,10 @@ namespace AtmBanking.BAL.services
         public void Register(CustomerInfo customerInfo)
         {
             _customerInfoRepository.Register(customerInfo);
+        }
+        public CustomerInfo Login(CustomerInfo customerInfo)
+        {
+            return _customerInfoRepository.Login(customerInfo);
         }
     }
 }

@@ -26,5 +26,15 @@ namespace AtmBankingApi.Controllers
             return Ok("Register successfully!!");
 
         }
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] CustomerInfo customerInfo)
+        {
+            CustomerInfo customer = _customerInfoService.Login(customerInfo);
+            if (customer != null)
+                return Ok("Login success!!");
+            else
+                return NotFound();
+        }
     }
- }
+}
+

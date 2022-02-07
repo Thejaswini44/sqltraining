@@ -8,11 +8,9 @@ using System.Text;
 
 namespace AtmBanking.DAL.Repository
 {
-    public class CustomerRepository : ICustomerRepository
-
+   public class CustomerRepository:ICustomerRepository
     {
-        private AtmDbContext _atmDbContext;
-
+        AtmDbContext _atmDbContext;
         public CustomerRepository(AtmDbContext atmDbContext)
         {
             _atmDbContext = atmDbContext;
@@ -23,7 +21,6 @@ namespace AtmBanking.DAL.Repository
             _atmDbContext.SaveChanges();
         }
 
-      
         public void DeleteCustomer(int card_no)
         {
             var customer = _atmDbContext.customer.Find(card_no);
@@ -41,19 +38,11 @@ namespace AtmBanking.DAL.Repository
             return _atmDbContext.customer.ToList();
         }
 
-        //public void Register(Customer customer)
-        //{
-        //    _atmDbContext.customer.Add(customer);
-        //    _atmDbContext.SaveChanges();
-        //}
-
         public void UpdateCustomer(Customer customer)
         {
             _atmDbContext.Entry(customer).State = EntityState.Modified;
             _atmDbContext.SaveChanges();
         }
-
-       
-      
     }
 }
+

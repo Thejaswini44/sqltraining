@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AtmBanking.Entity.Models
 {
-    public class CustomerInfo
+   public class CustomerInfo
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,7 +16,7 @@ namespace AtmBanking.Entity.Models
         public string city { get; set; }
         public string email_address { get; set; }
         public int contact_info { get; set; }
-      
+
         public int card_no { get; set; }
         public int pin_no { get; set; }
         public string account_type { get; set; }

@@ -3,14 +3,16 @@ using AtmBanking.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AtmBanking.DAL.Migrations
 {
     [DbContext(typeof(AtmDbContext))]
-    partial class AtmDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220207150223_AccountDetailsModelCreation")]
+    partial class AccountDetailsModelCreation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,24 +48,6 @@ namespace AtmBanking.DAL.Migrations
                     b.HasKey("accountId_no");
 
                     b.ToTable("accountDetails");
-                });
-
-            modelBuilder.Entity("AtmBanking.Entity.Models.Admin", b =>
-                {
-                    b.Property<int>("AdminId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("password")
-                        .HasColumnType("int");
-
-                    b.HasKey("AdminId");
-
-                    b.ToTable("admin");
                 });
 
             modelBuilder.Entity("AtmBanking.Entity.Models.Customer", b =>
