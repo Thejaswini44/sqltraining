@@ -13,6 +13,7 @@ namespace AtmBanking.DAL.Repository
         Customer GetAdminByAdminId(int AdminId);
         IEnumerable<Admin> GetAdmin();
 
-        Admin Login(Admin admin);
+        Admin Login(Admin admin1);
+       
     }
 }

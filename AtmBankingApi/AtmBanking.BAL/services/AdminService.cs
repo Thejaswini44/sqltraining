@@ -43,7 +43,7 @@ namespace AtmBanking.BAL.services
         {
             return _adminRepository.Login(admin);
         }
-
+      
 
     }
 }

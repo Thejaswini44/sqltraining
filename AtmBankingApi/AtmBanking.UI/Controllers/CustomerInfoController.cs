@@ -23,6 +23,25 @@ namespace AtmBanking.UI.Controllers
         {
             return View();
         }
+       
+        public async Task<IActionResult> CustomerInfoDetails()
+        {
+            //StringContent content = new StringContent(JsonConvert.SerializeObject(customerInfo), Encoding.UTF8, "application/json");
+            IEnumerable<CustomerInfo> customerinforesult = null;
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "CustomerInfo/CustomerInfoDetails";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        customerinforesult = JsonConvert.DeserializeObject<IEnumerable<CustomerInfo>>(result);
+                    }
+                }
+            }
+            return View(customerinforesult);
+        }
         public IActionResult Register()
         {
             return View();
@@ -66,10 +85,7 @@ namespace AtmBanking.UI.Controllers
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        ViewBag.status = "Ok";
-                        ViewBag.message = "Register successfully!";
-                    }
+                        return RedirectToAction("CustomerInfoDetails", "CustomerInfo");
                     else
                     {
                         ViewBag.status = "Error";

@@ -44,10 +44,10 @@ namespace AtmBanking.DAL.Repository
             _atmDbContext.SaveChanges();
         }
 
-        public Admin Login(Admin admin)
+        public Admin Login(Admin admin1)
         {
-           Admin admin1 = null;
-            var result = _atmDbContext.admin.Where(obj => obj.Username == admin.Username && obj.password == admin.password).ToList();
+           Admin admin = null;
+            var result = _atmDbContext.admin.Where(obj => obj.Username == admin1.Username && obj.password == admin1.password).ToList();
             if (result.Count > 0)
             {
                 admin = result[0];

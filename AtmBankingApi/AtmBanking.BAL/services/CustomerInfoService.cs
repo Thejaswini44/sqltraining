@@ -23,5 +23,9 @@ namespace AtmBanking.BAL.services
         {
             return _customerInfoRepository.Login(customerInfo);
         }
+        public IEnumerable<CustomerInfo> GetCustomerInfoDetails()
+        {
+            return _customerInfoRepository.GetCustomerInfoDetails();
+        }
     }
 }

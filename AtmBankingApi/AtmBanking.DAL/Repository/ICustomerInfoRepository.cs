@@ -7,11 +7,10 @@ using System.Text;
 namespace AtmBanking.DAL.Repository
 {
 
-    
         public interface ICustomerInfoRepository
         {
-
             void Register(CustomerInfo customerInfo);
             CustomerInfo Login(CustomerInfo customerInfo);
+        IEnumerable<CustomerInfo> GetCustomerInfoDetails();
     }
     }
