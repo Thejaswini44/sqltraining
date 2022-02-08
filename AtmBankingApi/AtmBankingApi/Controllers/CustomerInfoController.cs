@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AtmBankingApi.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     

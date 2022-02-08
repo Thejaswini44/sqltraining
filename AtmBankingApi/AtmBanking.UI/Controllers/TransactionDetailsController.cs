@@ -1,20 +1,20 @@
-﻿using AtmBanking.Entity.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using AtmBanking.Entity.Models;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AtmBanking.UI.Controllers
 {
-    public class AdminController : Controller
+    public class TransactionDetailsController : Controller
     {
         private IConfiguration _configuration;
-        public AdminController(IConfiguration configuration)
+        public TransactionDetailsController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -22,25 +22,24 @@ namespace AtmBanking.UI.Controllers
         {
             return View();
         }
-        public IActionResult Login()
+        public IActionResult TransactionDetailsEntry()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(Admin admin)
+        public async Task<IActionResult> TransactionDetailsEntry(TransactionDetails transactionDetails)
         {
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
             {
-                StringContent content = new StringContent(JsonConvert.SerializeObject(admin), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "Admin/Login";
+                StringContent content = new StringContent(JsonConvert.SerializeObject(transactionDetails), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "TransactionDetails/TransactionDetailsEntry";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         ViewBag.status = "Ok";
-                        ViewBag.message = "Admin login successfully!";
-                        return RedirectToAction("Index", "Home");
+                        ViewBag.message = "Transaction Details entered successfully!!";
                     }
                     else
                     {
@@ -51,7 +50,5 @@ namespace AtmBanking.UI.Controllers
             }
             return View();
         }
-      
-       
     }
 }

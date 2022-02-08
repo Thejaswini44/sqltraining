@@ -30,7 +30,7 @@ namespace AtmBanking.UI.Controllers
             IEnumerable<CustomerInfo> customerinforesult = null;
             using (HttpClient client = new HttpClient())
             {
-                string endPoint = _configuration["WebApiBaseUrl"] + "CustomerInfo/CustomerInfoDetails";
+                string endPoint = _configuration["WebApiBaseUrl"] + "CustomerInfo/GetCustomerInfoDetails";
                 using (var response = await client.GetAsync(endPoint))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -85,15 +85,16 @@ namespace AtmBanking.UI.Controllers
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                        return RedirectToAction("CustomerInfoDetails", "CustomerInfo");
+                        return RedirectToAction("CustomerInfoDetails");
                     else
                     {
                         ViewBag.status = "Error";
                         ViewBag.message = "Wrong credentials!";
+                        return View();
                     }
                 }
             }
-            return View();
+            
         }
     }
 }

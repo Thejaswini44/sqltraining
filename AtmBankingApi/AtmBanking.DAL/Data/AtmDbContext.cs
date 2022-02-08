@@ -16,6 +16,7 @@ namespace AtmBanking.DAL.Data
         public DbSet<CustomerInfo> customerInfo { get; set; }
         public DbSet<Customer> customer { get; set; }
         public DbSet<AccountDetails> accountDetails { get; set; }
+        public DbSet<TransactionDetails> transactionDetails { get; set; }
         public DbSet<Admin> admin { get; set; }
 
     }
