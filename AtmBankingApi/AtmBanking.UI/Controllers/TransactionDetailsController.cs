@@ -22,6 +22,24 @@ namespace AtmBanking.UI.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> TransactionDetails()
+        {
+            //StringContent content = new StringContent(JsonConvert.SerializeObject(customerInfo), Encoding.UTF8, "application/json");
+            IEnumerable<TransactionDetails> transactiondetailsresult = null;
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "TransactionDetails/GetTransactionDetails";
+                using (var response = await client.GetAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        transactiondetailsresult = JsonConvert.DeserializeObject<IEnumerable<TransactionDetails>>(result);
+                    }
+                }
+            }
+            return View(transactiondetailsresult);
+        }
         public IActionResult TransactionDetailsEntry()
         {
             return View();

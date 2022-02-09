@@ -81,7 +81,7 @@ namespace AtmBanking.UI.Controllers
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(customerInfo), Encoding.UTF8, "application/json");
-                string endPoint = _configuration["WebApiBaseUrl"] + "CustomerInfo/Login";
+                string endPoint = _configuration["WebApiBaseUrl"] + "CustomerInfo/Token";
                 using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)

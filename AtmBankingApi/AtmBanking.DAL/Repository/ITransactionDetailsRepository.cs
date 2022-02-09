@@ -8,5 +8,6 @@ namespace AtmBanking.DAL.Repository
    public interface ITransactionDetailsRepository
     {
         void TransactionDetailsEntry(TransactionDetails transactionDetails);
+        IEnumerable<TransactionDetails> GetTransactionDetails();
     }
 }

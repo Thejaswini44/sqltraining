@@ -1,9 +1,50 @@
 ﻿@model IEnumerable<AtmBanking.Entity.Models.CustomerInfo>
+    <div class="row">
+        <div class="col-12">
+            <h3>CustomerDetails</h3>
+            <hr />
+            <table class="table table-light table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>CustomerId</th>
+                        <th>name</th>
+                        <th>address</th>
+                        <th>city</th>
+                        <th>email_address</th>
+                        <th>contact_info</th>
+                        <th>card_no</th>
+                        <th>pin_no</th>
+                        <th>account_number</th>
+                        <th>account_type</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    
+                       
+                    <tr>
+                        <td>@item.CustomerId</td>
+                        <td>@item.name</td>
+                        <td>@item.address</td>
+                        <td>@item.city</td>
+                        <td>@item.email_address</td>
+                        <td>@item.contact_info</td>
+                        <td>@item.card_no</td>
+                        <td>@item.pin_no</td>
+                        <td>@item.account_number</td>
+                        <td>@item.account_type</td>
+                        
+                    </tr>
+                    }
+                </tbody>
+            </table>
+         
+        </div>
+    </div>
 
 
-@foreach (var item in Model)
-{
-    <h1> @item.account_number</h1>
-}
+
 
 

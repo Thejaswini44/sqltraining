@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AtmBanking.Entity.Models.TransactionDetails>
+<div class="row">
+    <div class="col-12">
+        <h3>TransactionDetails</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>transactionId</th>
+                    <th>accountId</th>
+                    <th>withdrawal</th>
+                    <th>deposit</th>
+                    <th>transfer</th>
+                    <th>transaction_amount</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+
+                    <tr>
+                        <td>@item.transactionId</td>
+                        <td>@item.accountId</td>
+                        <td>@item.withdrawal</td>
+                        <td>@item.deposit</td>
+                        <td>@item.transfer</td>
+                        <td>@item.Transaction_amount</td>
+                        
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

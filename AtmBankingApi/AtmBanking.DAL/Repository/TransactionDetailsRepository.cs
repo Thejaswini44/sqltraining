@@ -2,6 +2,7 @@
 using AtmBanking.Entity.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AtmBanking.DAL.Repository
@@ -17,6 +18,10 @@ namespace AtmBanking.DAL.Repository
         {
             _atmDbContext.transactionDetails.Add(transactionDetails);
             _atmDbContext.SaveChanges();
+        }
+        public IEnumerable<TransactionDetails> GetTransactionDetails()
+        {
+            return _atmDbContext.transactionDetails.ToList();
         }
     }
 }

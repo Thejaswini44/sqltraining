@@ -40,7 +40,7 @@ namespace AtmBanking.UI.Controllers
                     {
                         ViewBag.status = "Ok";
                         ViewBag.message = "Admin login successfully!";
-                        return RedirectToAction("Index", "Home");
+                       return RedirectToAction("TransactionDetails", "TransactionDetails");
                     }
                     else
                     {

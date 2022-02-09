@@ -26,5 +26,10 @@ namespace AtmBankingApi.Controllers
             return Ok("Transaction Details entered successfully!!");
 
         }
+        [HttpGet("GetTransactionDetails")]
+        public IEnumerable<TransactionDetails> GetTransactionDetails()
+        {
+            return _transactionDetailsService.GetTransactionDetails();
+        }
     }
 }

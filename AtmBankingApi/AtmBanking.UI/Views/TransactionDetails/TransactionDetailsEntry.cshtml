@@ -1,0 +1,40 @@
+﻿@model AtmBanking.Entity.Models.TransactionDetails
+
+
+<form method="post" enctype="multipart/form-data">
+    <h2>Transaction Details Entry</h2><hr />
+    <div class="form-group">
+        <label>AccountId</label>
+        <input type="text" asp-for="accountId" class="form-control" placeholder="Enter Accountid" required />
+    </div>
+    <div class="form-group">
+        <label>Withdrawal</label>
+        <input type="text" asp-for="withdrawal" class="form-control" placeholder="Enter withdrawlamt" required />
+    </div>
+    <div class="form-group">
+        <label>Deposit</label>
+        <input type="text" asp-for="deposit" class="form-control" placeholder="Enter Deposit" required />
+    </div>
+    <div class="form-group">
+        <label>Transfer</label>
+        <input type="text" asp-for="transfer" class="form-control" placeholder="Enter Transfer" required />
+    </div>
+    <div class="form-group">
+        <label>Transactionamount</label>
+        <input type="text" asp-for="Transaction_amount" class="form-control" placeholder="Enter Transactionamount" required />
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-outline-success" />
+    <input type="button" value="Reset" class="btn btn-outline-secondary" />
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+    <div class="alert alert-success">
+        @ViewBag.message
+    </div> }
+    else if (ViewBag.status == "Error")
+    {
+    <div class="alert alert-danger">
+        @ViewBag.message
+    </div>}
+</form>

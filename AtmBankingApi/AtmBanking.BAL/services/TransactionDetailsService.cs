@@ -20,6 +20,10 @@ namespace AtmBanking.BAL.services
             {
                 _transactionDetailsRepository.TransactionDetailsEntry(transactionDetails);
             }
+        public IEnumerable<TransactionDetails> GetTransactionDetails()
+        {
+            return _transactionDetailsRepository.GetTransactionDetails();
         }
+    }
     }
 
